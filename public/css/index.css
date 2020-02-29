@@ -1,0 +1,653 @@
+:root {
+    --cont-padd: calc(30px + ((5% - 25px)/2))
+}
+html {
+    width: 100%;
+}
+body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+.header-main {
+    position: fixed;
+    top: 0;
+    width: calc(100% - 60px);
+    height: 150px;
+    z-index: 20;
+    padding: 0 30px;
+    transition: .1s;
+    margin-left: 0;
+    margin-right: 0;
+}
+.header-main .nav-con {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 73px;
+    width: 100%;
+    /* max-width: 95%; */
+    height: inherit;
+    /* margin-left: auto;
+    margin-right: auto; */
+}
+
+.header-main.moved {
+
+}
+.logo-header {
+    height: 100%;
+    top: 0;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    left: 50%;
+    transform: translate(-65px, 15px);
+}
+.logo-img {
+    height: 130px;
+    width: 125px;
+}
+.logo-img.fixedover {
+    transform: scale(.5);
+}
+.header-main.fixedover {
+    height: 70px;
+    background-color: #fff;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, .1);
+}
+.header-main .box-right {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+    height: 100%
+}
+.box-right .search-box {
+    width: 5%;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+.box-left {
+    width: 5%;
+    height: 100%;
+    z-index: 99;
+}
+.box-left .btn-menu {
+    width: 100%;
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nav-main {
+    position: fixed;
+    transform: translateX(-350px);
+    display: flex;
+    width: 320px;
+    height: 100vh;
+    z-index: 22;
+    flex-direction: column;
+    transition: .25s;
+    transition-delay: .8s;
+    background: rgba(96, 80, 167, 1);
+}
+.nav-main .top {
+    margin-top: 20px;
+    height: 100%;
+    padding: 6px;
+    font-family: 'Ubuntu', sans-serif;
+}
+.nav-main ul.menu-itms {
+    display: flex;
+    list-style: none;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+/* .nav-main ul.menu li:first-child {
+    margin-bottom: 20px;
+} */
+.nav-main ul.menu-itms li {
+    position: relative;
+    margin: 20px 0;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: .4s ease-in;
+    left: -80%;
+}
+.nav-main ul.menu-itms li.open {
+    position: relative;
+    margin: 20px 0;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: .4s;
+    left: 0;
+}
+.nav-main ul.menu-itms li a {
+    text-decoration: none;
+    color: #fff;
+}
+.nav-main.open {
+    transform: translateX(0);
+    transition: .25s ease-in;
+}
+.menu {
+    width: 25px;
+    height: 16px;
+    cursor: pointer;
+    z-index: 37;
+
+}
+.menu .line {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    transition: all .25s ease-in;
+}
+.menu .line:last-child {
+    margin-top: 10px;
+}
+#close {
+    position: fixed;
+    width: calc(100% - 320px);
+    height: 100vh;
+    left: 320px;
+    z-index: 21;
+    display: none;
+
+}
+#close.on{
+    display: block;
+}
+
+.nav-main ul.menu-itms li:nth-child(1) { transition-delay: .2s;}
+.nav-main ul.menu-itms li:nth-child(2) { transition-delay: .3s;}
+.nav-main ul.menu-itms li:nth-child(3) { transition-delay: .4s;}
+.nav-main ul.menu-itms li:nth-child(4) { transition-delay: .5s;}
+.nav-main ul.menu-itms li:nth-child(5) { transition-delay: .6s;}
+.nav-main ul.menu-itms li:nth-child(6) { transition-delay: .7s;}
+
+
+.main-bg {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+.main-bg::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: url(../images/adolescent-adult-back-to-school-2883153.jpg);
+    background-size: cover;
+    filter: opacity(1) brightness(50%);
+}
+.nav-head {
+    height: 15vh;
+    width: calc(100% - 55px);
+    padding-left: 55px;
+    padding-top: 15px;
+}
+.box-left.in-nav {
+    transition: .4s ease-out;
+}
+.menu-innav .line#line1 {
+    transform: skewY(45deg) translateY(13px);
+}
+.menu-innav .line#line2 {
+    transform: skewY(-45deg);
+}
+.menu-innav .line {
+    background: #fff !important;
+}
+.nav-main .box-left {
+    transform: translateX(-300px);
+    transition: .3s ease-out;
+    transition-delay: .75s;
+}
+.nav-main .box-left.open {
+    transform: translateX(0);
+    transition: .35s ease-in;
+
+}
+.section-spacer {
+    padding: 100px 0;
+}
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    width: calc(100% - (var(--cont-padd)*2));
+    padding: 0 var(--cont-padd);
+    height: inherit;
+}
+.welcome-sec  {
+    height: 400px;
+    width: 100%;
+    font-family: 'Rubik', sans-serif;
+}
+.welcome-msg {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.welcome-msg .msg {
+    text-align: center;
+    width: 50%;
+    line-height: 1.9rem;
+    animation-name: fade-in;
+    animation-duration: 1.5s;
+}
+@keyframes fade-in {
+    0% { opacity: 0 }
+    30% {opacity: 0;}
+    40% {opacity: .4s;}
+    49% {opacity: .9} 
+    50% {opacity: 1}
+    100% {opacity: 1}
+}
+.welcome-msg h1 {
+    font-size: 35px;
+}
+.row {
+    display: flex;
+    height: inherit;
+    width: 100%;
+}
+.first-steps {
+    height: 400px;
+    width: 100%;
+}
+.img-left {
+    width: 50%;
+    height: 100%;
+    background: url('../images/boy-chair-children-1001914\ \(1\).jpg');
+    background-size: cover;
+    background-position: center center;
+    margin-left: -51px;
+}
+.txt-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+
+}
+.txt-right .cont {
+    width: 80%;
+    height: 80%;
+    margin-top: -30px;
+}
+.cont h1 {
+    font-size: 40px;
+    font-family: 'Ubuntu', sans-serif;
+    letter-spacing: -3px;
+    font-weight: 500;
+}
+.cont p {
+    line-height: 1.5rem;
+    font-family: 'Rubik', sans-serif;
+}
+.cont .p-decor {
+    font-family: 'Liu Jian Mao Cao', cursive;
+    font-size: 40px;
+    color: rgba(96, 80, 167, 1);
+}
+.learning {
+    height: 500px;
+    width: 100%
+}
+.text-learning {
+    width: 50%;
+    padding-right: 50px;
+}
+.space-down {
+    padding: 0 0 100px 0;
+}
+.learning .container {
+    background: #eee;
+}
+.img-learning {
+    background: url('../images/children-cute-drawing-159823.jpg');
+    background-size: cover;
+    background-position: center center;
+    height: inherit;
+    width: 70%;
+    margin-right: -50px;
+}
+/* .learning>.container {padding-right: 0;} */
+.not-div {
+    background: rgba(96, 80, 167, 1);
+}
+.not-div>.container .row {
+    justify-content: center;
+    align-items: center;
+}
+.not-div>.container .row .cont {
+    width: 50%;
+}
+.not-div>.container .row .cont p {
+    text-align: center;
+    color: #fff;
+}
+.orangish {
+    color: #f1cf31 !important;
+}
+.not-div>.container .row .cont h1{
+    text-align: center;
+    color: #fff;
+}
+.low {
+    filter: brightness(40%);
+}
+.links {
+    height: 40%;
+    width: 50%;
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: auto auto;
+    grid-row-gap: 0px;
+}
+.cont {
+    height: 100%;
+}
+.link-div {
+    height: 50%;
+    width: 100%;
+}
+.link-div-top {
+    padding-top: 20%;
+}
+.btn_underline {
+    text-decoration: none;
+    font-family: 'Ubuntu', sans-serif;
+    color: #000;
+    position: relative;
+    padding: 19px 0;
+    font-weight: 500;
+}
+.btn_underline::before {
+    content: '';
+    width: 40px;
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+    background: #009a44;
+    left: 0;
+}
+.btn_underline::after {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-right: 2px solid #009a44;
+    border-top: 2px solid #009a44;
+    bottom: -6px;
+    left: 40px;
+    transform: rotate(45deg);
+    left: 28px;
+    opacity: 0;
+    transition: all .5s ease-in-out 0s;
+}
+.btn_underline:hover::after {
+    opacity: 1;
+}
+.btn_underline:hover {
+    color: #009a44;
+}
+.link-div {
+    width: 125px;
+}
+
+.left {
+    background-image: url("../images/photo-of-boy-wearing-headphone-2291471.jpg");
+    background-size: cover;
+    background-position: center center;
+    height: 100%;
+    width: 50%;
+}
+.long {
+    height: 800px;
+}
+.right {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding-left: 60px;
+}
+.right-img {
+    background-image: url('../images/three-men-standing-near-window-1516440.jpg');
+    background-size: cover;
+    background-position: center center;
+    height: 50%;
+    width: 100%;
+    margin-top: 80px;
+}
+.header-right {
+    font-size: 30px;
+}
+.header-right h1 {
+    font-family: 'Rubik', sans-serif;
+}
+.txt-wrap p {
+    line-height: 1.6rem;
+    font-family: 'Rubik', sans-serif;
+}
+.testimonial {
+    position: relative;
+    height: 250px;
+    padding-bottom: 82px;
+    background: none;
+}
+.quote {
+    text-align: center;
+    font-size: 103px;
+    line-height: 1;
+}
+.testimonial .cont {
+    width: 575px;
+    max-width: 100%;
+}
+.testimonial .cont .word {
+    padding-bottom: 35px;
+    margin-top: -20px;
+
+}
+
+.testimonial .name {
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+}
+.testimonial::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    height: calc(100% + 320px);
+    background: rgba(0,30,96,.05);
+}
+
+.intro {
+    width: 100%;
+    height: 100%;
+
+    background: rgba(96, 80, 167, 1);
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+    opacity: 0;
+    animation-name: fade-out;
+    animation-duration: 2.5s;
+    transition: ease-out .2s;
+}
+.intro_logo {
+    opacity: 1;
+    animation-name: fade-in;
+    animation-duration: 1s;
+    transform: scale(.8);
+}
+@keyframes fade-out {
+    0% { opacity: 1; z-index: 21 }
+    50% {opacity: 1}
+    60%{opacity: 1;}
+    70% {opacity: .8;}
+    80% {opacity: .4}
+    100% {opacity: 0; z-index: 21}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+    .welcome-sec {
+        height: 410px;
+    }
+    .welcome-msg .msg {
+        width: 100%;
+        line-height: 1.75rem;
+        font-size: 19px
+    }
+    .welcome-msg h1 {
+        font-size: 20px;
+    }
+    .section-spacer {
+        padding: 20px 0;
+    }
+    .nav-main {
+        width: 320px;
+        transform: translateX(-320px);
+    }
+    #close {
+        left: 320px;
+        width: calc(100% - 320px);
+    }
+    .nav-main ul.menu-itms li {
+        left: -110%;
+    }
+    .nav-main ul.menu-itms {
+        width: inherit;
+    } 
+    .row {
+        flex-direction: column;
+    }
+    .row p {
+        font-size: 15px;
+    }
+    .row .p-decor {
+        font-size: 18px;
+    
+    }
+    .row h1{
+        font-size: 20px;
+        letter-spacing: .9px;
+    }
+    .row-child {
+        width: 100%;
+        margin-left: auto;
+        height: 50%;
+    }
+
+    .row-img {
+        width: calc(100% + (var(--cont-padd)*2) + 2px);
+        margin-left: -37px;
+    }
+    .img-learning {
+        margin-right: 0;
+        height: 30%;
+    }
+    .text-learning { padding-right: 0 }
+    section {
+        width: 100%;
+    } 
+    .first-steps {
+        height: 50vh;
+    }
+    .learning {
+        height: 800px;
+    }
+    .learning .row {
+        position: relative;
+
+    }
+    .space-down {
+        padding: 0 0 30px 0;
+    }
+    .img-learning {
+        margin-bottom: 0;
+    }
+    .img-learning {
+        position: absolute;
+        bottom: 0;
+        height: 50%;
+    }
+    .long .left {
+        display: none;
+    }
+
+    .word {
+        width: 100%;
+    }
+    .long .right {
+        width: 100%;
+        padding: 0;
+        height: 100%;
+    }
+    .not-div>.container .row .cont {
+        width: 100%;
+    }
+}
+
+
+@media screen and (max-width: 433px) {
+    .welcome-sec {
+        height: 500px;
+    }
+    .welcome-msg .msg {
+        font-size: 14px
+    }
+
+    .row-img {
+        width: calc(100% + (var(--cont-padd)*2) + 2px);
+        margin-left: -27px;
+    }
+    .first-steps {
+        height: 80vh;;
+    }
+    .learning {
+        height: 600px;
+    }
+    .img-learning {
+        height: 30%;
+    }
+}
